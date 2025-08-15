@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Additional/style.css">
 
     <title>Jeanne's Portfolio</title>
 </head>
+
 <body>
-    <h1>Test</h1>
+    <!-- Background animations -->
+    <div class="matrix-bg"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="profile-frame">
+            <img src="profile.jpg" alt="Profile Image">
+        </div>
+        <h1 class="name-glow">John Doe</h1>
+    </header>
+    
+    <!-- Cube Scene -->
+    <div class="scene">
+        <div class="cube" id="cube">
+            <div class="face front">
+                <h2 class="glitch" data-text="> About Me">> About Me</h2>
+                <p>Hello! I’m a passionate tech enthusiast with a love for problem-solving, ethical hacking, and
+                    building cool projects.</p>
+            </div>
+            <div class="face back">
+                <h2 class="glitch" data-text="> Skills">> Skills</h2>
+                <ul>
+                    <li>Python, JavaScript, C++</li>
+                    <li>Web Development (HTML, CSS, React)</li>
+                    <li>Cybersecurity & Ethical Hacking</li>
+                    <li>Database Management (MySQL, MongoDB)</li>
+                </ul>
+            </div>
+            <div class="face right">
+                <h2 class="glitch" data-text="> Experience">> Experience <span class="hidden-tag">(hidden)</span></h2>
+                <div id="exp-content" class="hidden">
+                    <ul>
+                        <li>Software Developer at XYZ Corp</li>
+                        <li>Freelance Web Security Consultant</li>
+                    </ul>
+                </div>
+                <button id="toggle-exp">Toggle Experience</button>
+            </div>
+            <div class="face left">
+                <h2 class="glitch" data-text="> Projects">> Projects</h2>
+                <ul>
+                    <li><a href="https://github.com/username/ai-chatbot" target="_blank">AI-powered Chatbot</a></li>
+                    <li><a href="https://username.github.io/portfolio" target="_blank">Personal Portfolio Website</a>
+                    </li>
+                    <li><a href="https://github.com/username/network-scanner" target="_blank">Network Vulnerability
+                            Scanner</a></li>
+                </ul>
+            </div>
+            <div class="face top">
+                <h2 class="glitch" data-text="> Certifications">> Certifications</h2>
+                <ul>
+                    <li>Certified Ethical Hacker (CEH)</li>
+                    <li>CompTIA Security+</li>
+                </ul>
+                <h2 class="glitch" data-text="> Education">> Education</h2>
+                <ul>
+                    <li>B.Sc. in Computer Science – ABC University</li>
+                </ul>
+            </div>
+            <div class="face bottom">
+                <h2 class="glitch" data-text="> Contact Me">> Contact Me</h2>
+                <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+                <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
+                <p class="cta">> Let’s work together! <a href="mailto:john.doe@example.com">Contact me</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+<!-- Left Side Buttons -->
+<div class="side-buttons left">
+    <button data-face="front">About</button>
+    <button data-face="top">Certifications</button>
+    <button data-face="left">Projects</button>
+</div>
+
+<!-- Right Side Buttons -->
+<div class="side-buttons right">
+    <button data-face="back">Skills</button>
+    <button data-face="right">Experience</button>
+    <button data-face="bottom">Contact</button>
+</div>
+
+    <script src="Additional/index.js"></script>
 </body>
+
+
+
 </html>

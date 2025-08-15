@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #0d0d0d;
+    color: #00bfff;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Background Matrix Animation */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 191, 255, 0.15) 0px,
+            rgba(0, 191, 255, 0.15) 1px,
+            transparent 1px,
+            transparent 3px);
+    animation: scroll 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes scroll {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+/* .matrix-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 191, 255, 0.15) 0px,
+        rgba(0, 191, 255, 0.15) 1px,
+        transparent 1px,
+        transparent 3px
+    ),
+    repeating-linear-gradient(
+        to right,
+        rgba(0, 191, 255, 0.15) 0px,
+        rgba(0, 191, 255, 0.15) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    animation: glitchMove 5s infinite linear;
+    z-index: -1;
+}
+@keyframes glitchMove {
+    0% { background-position: 0 0, 0 0; }
+    50% { background-position: 5px -5px, -5px 5px; }
+    100% { background-position: 0 0, 0 0; }
+} */
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.profile-frame {
+    border: 3px solid #00bfff;
+    box-shadow: 0 0 15px #00bfff;
+    padding: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-glow {
+    margin-top: 10px;
+    font-size: 1.8em;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+/* Cube */
+.scene {
+    width: 400px;
+    height: 400px;
+    perspective: 1200px;
+    margin-top: 20px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #00bfff;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+}
+
+.front {
+    transform: rotateY(0deg) translateZ(200px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+/* Controls */
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    background: transparent;
+    border: 1px solid #00bfff;
+    color: #00bfff;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00bfff;
+    color: #000;
+}
+
+.side-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
+}
+.side-buttons.left {
+    left: 700px; /* adjust based on cube size */
+}
+.side-buttons.right {
+    right: 700px;
+}
+.side-buttons button {
+    background: transparent;
+    border: 1px solid #00bfff;
+    color: #00bfff;
+    padding: 8px 12px;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.side-buttons button:hover {
+    background: #00bfff;
+    color: #000;
+    box-shadow: 0 0 10px #00bfff;
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+    color: #ff00ff;
+    animation: glitchTop 2s infinite;
+}
+
+.glitch::after {
+    color: #00ffff;
+    animation: glitchBottom 1.5s infinite;
+}
+
+@keyframes glitchTop {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+    }
+
+    10% {
+        clip: rect(5px, 9999px, 15px, 0);
+        transform: translate(-2px, -2px);
+    }
+
+    20% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: none;
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+    }
+
+    10% {
+        clip: rect(30px, 9999px, 40px, 0);
+        transform: translate(2px, 2px);
+    }
+
+    20% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: none;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .scene {
+        width: 280px;
+        height: 280px;
+    }
+
+    .face {
+        width: 280px;
+        height: 280px;
+    }
+}
