@@ -21,7 +21,7 @@
         </div>
         <h1 class="name-glow">John Doe</h1>
     </header>
-    
+
     <!-- Cube Scene -->
     <div class="scene">
         <div class="cube" id="cube">
@@ -33,7 +33,7 @@
             <div class="face back">
                 <h2 class="glitch" data-text="> Skills">> Skills</h2>
                 <ul>
-                    <li>Python, JavaScript, C++</li>
+                    <li>Java, Python, JavaScript, C++</li>
                     <li>Web Development (HTML, CSS, React)</li>
                     <li>Cybersecurity & Ethical Hacking</li>
                     <li>Database Management (MySQL, MongoDB)</li>
@@ -47,7 +47,6 @@
                         <li>Freelance Web Security Consultant</li>
                     </ul>
                 </div>
-                <button id="toggle-exp">Toggle Experience</button>
             </div>
             <div class="face left">
                 <h2 class="glitch" data-text="> Projects">> Projects</h2>
@@ -81,19 +80,29 @@
     </div>
 
     <!-- Buttons -->
-<!-- Left Side Buttons -->
-<div class="side-buttons left">
-    <button data-face="front">About</button>
-    <button data-face="top">Certifications</button>
-    <button data-face="left">Projects</button>
-</div>
+    <!-- Left Side Buttons -->
+    <div class="cube-wrapper">
+        <!-- Left Buttons -->
+        <div class="side-buttons left">
+            <button data-face="front">About</button>
+            <button data-face="top">Certifications</button>
+            <button data-face="left">Projects</button>
+        </div>
 
-<!-- Right Side Buttons -->
-<div class="side-buttons right">
-    <button data-face="back">Skills</button>
-    <button data-face="right">Experience</button>
-    <button data-face="bottom">Contact</button>
-</div>
+        <!-- Cube Scene -->
+        <div class="scene">
+            <div class="cube" id="cube">
+                <!-- All your cube faces stay the same -->
+            </div>
+        </div>
+
+        <!-- Right Buttons -->
+        <div class="side-buttons right">
+            <button data-face="back">Skills</button>
+            <button data-face="right">Experience</button>
+            <button data-face="bottom">Contact</button>
+        </div>
+    </div>
 
     <script src="Additional/index.js"></script>
 </body>

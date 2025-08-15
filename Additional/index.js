@@ -1,6 +1,3 @@
-document.getElementById("toggle-exp").addEventListener("click", function () {
-    document.getElementById("exp-content").classList.toggle("hidden");
-});
 const cube = document.getElementById('cube');
 document.querySelectorAll('.side-buttons button').forEach(btn => {
     btn.addEventListener('click', () => {

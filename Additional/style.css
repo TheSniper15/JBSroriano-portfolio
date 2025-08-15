@@ -10,6 +10,10 @@ body {
     align-items: center;
 }
 
+a {
+    color: greenyellow;
+}
+
 /* Background Matrix Animation */
 .matrix-bg {
     position: fixed;
@@ -35,33 +39,6 @@ body {
         background-position: 0 100%;
     }
 }
-
-/* .matrix-bg {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(0, 191, 255, 0.15) 0px,
-        rgba(0, 191, 255, 0.15) 1px,
-        transparent 1px,
-        transparent 3px
-    ),
-    repeating-linear-gradient(
-        to right,
-        rgba(0, 191, 255, 0.15) 0px,
-        rgba(0, 191, 255, 0.15) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    animation: glitchMove 5s infinite linear;
-    z-index: -1;
-}
-@keyframes glitchMove {
-    0% { background-position: 0 0, 0 0; }
-    50% { background-position: 5px -5px, -5px 5px; }
-    100% { background-position: 0 0, 0 0; }
-} */
 
 /* Header */
 .header {
@@ -99,7 +76,7 @@ body {
     width: 400px;
     height: 400px;
     perspective: 1200px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .cube {
@@ -146,9 +123,6 @@ body {
 }
 
 /* Controls */
-.controls {
-    margin-top: 20px;
-}
 
 button {
     background: transparent;
@@ -176,11 +150,27 @@ button:hover {
     z-index: 2;
 }
 .side-buttons.left {
-    left: 700px; /* adjust based on cube size */
+    left: 220px; 
 }
 .side-buttons.right {
-    right: 700px;
+    right: 250px;
 }
+
+.cube-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px; /* space between cube and buttons */
+    position: relative;
+    margin-top: -80px;
+}
+
+.side-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .side-buttons button {
     background: transparent;
     border: 1px solid #00bfff;
@@ -190,11 +180,18 @@ button:hover {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .side-buttons button:hover {
     background: #00bfff;
     color: #000;
     box-shadow: 0 0 10px #00bfff;
 }
+
+/* Make sure cube grows and buttons stay aligned */
+.scene {
+    flex-shrink: 0;
+}
+
 
 /* Glitch Effect */
 .glitch {
